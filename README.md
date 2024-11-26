@@ -80,6 +80,8 @@ where im learning about Query-Parameters-and-String-Validations , u can check my
 
   i will track the project in this branch 
 
+  https://github.com/BentaherNoureddine/fast_api_learning/tree/school-manager
+
   
 
 
