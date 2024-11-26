@@ -1,6 +1,6 @@
-from model.Person import PersonModel
+from model.Person import Person
 
 
-class ProfessorModel(PersonModel):
+class Professor(Person):
     years_of_experience: int
     department: str

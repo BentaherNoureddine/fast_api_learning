@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 
-class PersonModel(BaseModel):
+class Person(BaseModel):
     id: int =None
     firstName: str
     lastName: str

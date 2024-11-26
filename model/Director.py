@@ -1,6 +1,6 @@
-from Person import PersonModel
+from Person import Person
 
 
-class DirectorModel(PersonModel):
+class Director(Person):
     years_of_experience: int
 
