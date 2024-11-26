@@ -69,6 +69,20 @@ https://github.com/BentaherNoureddine/fast_api_learning/tree/Query-Parameters-an
 where im learning about Query-Parameters-and-String-Validations , u can check my comments on the code 
 
 
+*** i think the way of how im learning is little boring so im gonna try to make a little  project :
+
+  * what s this project gonna be ?
+  - let s try the fastapi classes,oop and apis (apply what i have learned)
+
+  - what this project for ?:
+  
+  -shool managing where the director can manage the classes,students,professors ...,(simple CRUD for now)
+
+  i will track the project in this branch 
+
+  
+
+
 
 
 
