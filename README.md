@@ -52,6 +52,8 @@ this class Defines a Pydantic model called Item, which represents the structure 
 9- after trying this request this was the response :
 <img src="C:\Users\Nourdine\Pictures\Screenshots\Capture d’écran (198).png"/>
 
+![Capture d’écran (198)](https://github.com/user-attachments/assets/16df77c1-d696-40be-8e64-8923c16fa6ea)
+
 
 
 10-declaring a parameter with = none it means that it s optional , Without the None it would be required (as is the body in the case with PUT).
