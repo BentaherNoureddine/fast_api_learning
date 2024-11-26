@@ -62,6 +62,17 @@ this class Defines a Pydantic model called Item, which represents the structure 
 12-If the incoming JSON does not conform to the rules(defined in the schema like the Item Pydantic model), FastAPI will automatically return a detailed validation error.
 
 
+***IN THIS STAGE U GUYS CAN CHECK THE Query-Parameters-and-String-Validations branch in github and this is the link
+
+https://github.com/BentaherNoureddine/fast_api_learning/tree/Query-Parameters-and-String-Validations
+
+where im learning about Query-Parameters-and-String-Validations , u can check my comments on the code 
+
+
+
+
+
+
 
 
 
