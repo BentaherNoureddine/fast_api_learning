@@ -10,7 +10,7 @@ app = FastAPI()
 @app.get("/items/")
 # THE q IS A QUERY PARAM OF TYPE Union[str, None]  or str | None that means that it's of type str but could also be None,
 # and indeed, the default value is None, so FastAPI will know it's not required.
-async def read_items(q: str | None = None):
+async def read_items(q: Annotated[str | None , Query(max_length=50)] = None):
     results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
     if q:
         results.update({"q": q})
