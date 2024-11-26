@@ -54,6 +54,7 @@ this class Defines a Pydantic model called Item, which represents the structure 
 
 
 
+
 10-declaring a parameter with = none it means that it s optional , Without the None it would be required (as is the body in the case with PUT).
 
 11- FastAPI automatically parses the JSON payload into a Python object (or Pydantic model) .
