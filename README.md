@@ -103,7 +103,18 @@ that makes the life of python devs easier , where this library that will detect 
 
 2- i installed the latest version of  SQLAlchemy v 2.0.36
 
-3-
+3- after reading this documentation https://docs.sqlalchemy.org/en/20/tutorial/dbapi_transactions.html 
+
+i just learned that when u make a transaction the changes that u made with that transaction will not be instantly applied 
+
+because we need to commit those changes by calling conn.commit in our case , or we can rollback and if we don t commit the changes and we release the connection
+
+a rollback will be automatically  will be called
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, status, Query
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 
 app = FastAPI()
@@ -14,6 +14,11 @@ database = "fast_api_school"
 
 # CREATED THE ENGINE TO ESTABLISH A CONNECTION WITH THE MYSQL DB
 engine = create_engine(f"mysql+pymysql://{username}:{password}@{host}/{database}", echo=True)
+
+
+with engine.connect() as conn:
+    result = conn.execute(text("select 'hello world' "))
+    print(result.all())
 
 
 
