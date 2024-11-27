@@ -63,6 +63,8 @@ this class Defines a Pydantic model called Item, which represents the structure 
 
 ****************************************************************************************
 
+DAY 2 :
+
 HELLO EVERYONE AGAIN THIS IS NOUREDDINE , AND THIS IS OUR SECOND DAY WITH FAST API .
 
 *what i want to do today? :
@@ -93,6 +95,18 @@ this screenshot shows :
 after making a little search i found that everyone is making sql query inside the code in order to use sql , maybe inshallah ill make a library 
 
 that makes the life of python devs easier , where this library that will detect the classes that should be tables in the database and it will create them when starting the app.
+
+
+* after more searching(i asked chat gpt if there is python libraries  that makes using mysql easier) and i found there is a library called SQLAlchemy that can help let s test it and find out .
+
+1- i read the SQLAlchemy doc 
+
+2- i installed the latest version of  SQLAlchemy v 2.0.36
+
+3-
+
+
+
 
 
 
