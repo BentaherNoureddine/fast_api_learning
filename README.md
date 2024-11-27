@@ -63,11 +63,28 @@ this class Defines a Pydantic model called Item, which represents the structure 
 12-If the incoming JSON does not conform to the rules(defined in the schema like the Item Pydantic model), FastAPI will automatically return a detailed validation error.
 
 
+****************************************************************************************
+
+HELLO EVERYONE AGAIN THIS IS NOUREDDINE , AND THIS IS OUR SECOND DAY WITH FAST API .
+
+*what i want to do today? :
+
+-if u guys noticed im using mysql as a DataBase , with spring boot i only had to specify the mysql driver and the db source in order to use the mysql db,
+and i had to tell spring boot that such a class is a sql table by only using @Entity, and i used other annotations to specify some details about that table .
+
+what im sure about , and we all know is rich with libraries that helps reduce code, reduce tasks ,gain more time and makes things so easy ,
+
+SO WHAT IM GONNA DO NOW  : ill make a little search in order to find some libraries to help us making sql tables without typing so much as 
+this screenshot shows :
 
 
 
 
-  
+
+
+
+  ![Capture d’écran (200)](https://github.com/user-attachments/assets/1dc08cbf-8f7a-4862-8a99-5273755e0250)
+
 
 
 
