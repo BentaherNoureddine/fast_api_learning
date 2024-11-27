@@ -88,6 +88,12 @@ this screenshot shows :
 
 
 
+************************************************
+
+after making a little search i found that everyone is making sql query inside the code in order to use sql , maybe inshallah ill make a library 
+
+that makes the life of python devs easier , where this library that will detect the classes that should be tables in the database and it will create them when starting the app.
+
 
 
 
