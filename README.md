@@ -65,6 +65,8 @@ this class Defines a Pydantic model called Item, which represents the structure 
 
 ****************************************************************************************
 
+DAY 2 :
+
 HELLO EVERYONE AGAIN THIS IS NOUREDDINE , AND THIS IS OUR SECOND DAY WITH FAST API .
 
 *what i want to do today? :
@@ -84,6 +86,41 @@ this screenshot shows :
 
 
   ![Capture d’écran (200)](https://github.com/user-attachments/assets/1dc08cbf-8f7a-4862-8a99-5273755e0250)
+
+
+
+
+
+
+************************************************
+
+after making a little search i found that everyone is making sql query inside the code in order to use sql , maybe inshallah ill make a library 
+
+that makes the life of python devs easier , where this library that will detect the classes that should be tables in the database and it will create them when starting the app.
+
+
+* after more searching(i asked chat gpt if there is python libraries  that makes using mysql easier) and i found there is a library called SQLAlchemy that can help let s test it and find out .
+
+1- i read the SQLAlchemy doc 
+
+2- i installed the latest version of  SQLAlchemy v 2.0.36
+
+3- after reading this documentation https://docs.sqlalchemy.org/en/20/tutorial/dbapi_transactions.html 
+
+i just learned that when u make a transaction the changes that u made with that transaction will not be instantly applied 
+
+because we need to commit those changes by calling conn.commit in our case , or we can rollback and if we don t commit the changes and we release the connection
+
+a rollback will be automatically  will be called .
+
+to gain some time i only will test the commit and rollback in our project and im not gonna test the documentation examples to gain some time .
+
+4-learned about the engine.begin() that helps with managing database transaction and making commits and rollbacks automatically
+
+
+
+
+
 
 
 
