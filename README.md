@@ -117,6 +117,20 @@ to gain some time i only will test the commit and rollback in our project and im
 
 4-learned about the engine.begin() that helps with managing database transaction and making commits and rollbacks automatically
 
+********************************************************************************************************************************
+
+
+hello guys again , hope you are good , we are not getting feedback from anyone on how we are learning , that s ok at-least we are learning 
+
+and im really enjoying this journey and that  s what matter ! so let s get started !
+
+1-i think im getting so deep with the sql and this is not our main purpose  so what im gonna do is searching on how to convert a normal class to a database table !
+
+2-we have to use declarative_base() instead of baseModel because we have BaseModel is primarily used for data validation and serialization, not for direct database table creation.
+
+3- i found that if we want to use a string (varchar) we must define it s number of characters
+
+4- learned about session and added our first class instance to the database
 
 
 
