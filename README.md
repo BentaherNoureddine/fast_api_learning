@@ -124,7 +124,9 @@ and im really enjoying this journey and that  s what matter ! so let s get start
 
 1-i think im getting so deep with the sql and this is not our main purpose  so what im gonna do is searching on how to convert a normal class to a database table !
 
-2-
+2-we have to use declarative_base() instead of baseModel because we have BaseModel is primarily used for data validation and serialization, not for direct database table creation.
+
+
 
 
 

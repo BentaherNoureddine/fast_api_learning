@@ -1,9 +1,12 @@
 
-from sqlalchemy import Integer, String, Column, column, true, Boolean
-from pydantic import BaseModel
+from sqlalchemy import Integer, String, Column, Boolean
+from sqlalchemy.ext.declarative import declarative_base
 
 
-class Person(BaseModel):
+# creating a declarative base
+Base = declarative_base()
+
+class Person(Base):
     __tablename__ = 'person'
     
     id = Column(Integer, primary_key=True)
