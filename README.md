@@ -126,7 +126,7 @@ and im really enjoying this journey and that  s what matter ! so let s get start
 
 2-we have to use declarative_base() instead of baseModel because we have BaseModel is primarily used for data validation and serialization, not for direct database table creation.
 
-
+3- i found that if we want to use a string (varchar) we must define it s number of characters
 
 
 

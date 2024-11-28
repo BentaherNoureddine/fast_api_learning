@@ -1,6 +1,9 @@
 from fastapi import FastAPI, HTTPException, status, Query
-
 from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
+
+# IMPORTING PERSON AND BASE FROM PERSON.py
+from model.Person import Person, Base
 
 app = FastAPI()
 
@@ -13,18 +16,11 @@ database = "fast_api_school"
 # CREATED THE ENGINE TO ESTABLISH A CONNECTION WITH THE MYSQL DB
 engine = create_engine(f"mysql+pymysql://{username}:{password}@{host}/{database}", echo=True)
 
-# USING engine.connect() to make transactions
-with engine.connect() as conn:
-    result = conn.execute(text("select 'hello world' "))
-    print(result.all())
+# Create all tables
+Base.metadata.create_all(engine)
 
-# USING the powerful engine.begin() to make transaction
-with engine.begin() as conn:
-    conn.execute(text("CREATE TABLE some_table (x int, y int)"))
-    conn.execute(
-        text("INSERT INTO some_table (x, y) VALUES (:x, :y)"),
-        [{"x": 6, "y": 8}, {"x": 9, "y": 10}],
-    )
+# Create a session maker to interact with the database
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 # ROOT ENDPOINT
