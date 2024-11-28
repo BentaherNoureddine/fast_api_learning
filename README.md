@@ -128,6 +128,9 @@ and im really enjoying this journey and that  s what matter ! so let s get start
 
 3- i found that if we want to use a string (varchar) we must define it s number of characters
 
+4- learned about session and added our first class instance to the database
+
+
 
 
 
