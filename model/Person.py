@@ -15,3 +15,12 @@ class Person(Base):
     age = Column(Integer)
     phoneNumber = Column(String(50))
     disabled = Column(Boolean)
+
+    def __init__(self, firstName, lastName, sex, age, phoneNumber, disabled):
+
+        self.firstName = firstName
+        self.lastName = lastName
+        self.sex = sex
+        self.age = age
+        self.phoneNumber = phoneNumber
+        self.disabled = disabled

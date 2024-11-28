@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException, status, Query
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, text, false
 from sqlalchemy.orm import sessionmaker
 
 # IMPORTING PERSON AND BASE FROM PERSON.py
@@ -21,6 +21,10 @@ Base.metadata.create_all(engine)
 
 # Create a session maker to interact with the database
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+behe = Person("behe", "dehech", "M", 20, "+2165465445", False)
+
+print(behe.firstName)
 
 
 # ROOT ENDPOINT
