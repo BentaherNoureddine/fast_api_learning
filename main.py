@@ -18,7 +18,6 @@ with engine.connect() as conn:
     result = conn.execute(text("select 'hello world' "))
     print(result.all())
 
-
 # USING the powerful engine.begin() to make transaction
 with engine.begin() as conn:
     conn.execute(text("CREATE TABLE some_table (x int, y int)"))
