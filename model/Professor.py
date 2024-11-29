@@ -7,7 +7,7 @@ class Professor(Person):
     years_of_experience = Column(Integer)
     department = Column(String)
 
-    def __init__(self, years_of_experience, department,  firstName, lastName, sex, age, phoneNumber, disabled= False):
+    def __init__(self, years_of_experience, department, firstName, lastName, sex, age, phoneNumber, disabled=False):
         super().__init__(firstName, lastName, sex, age, phoneNumber, disabled)
         self.years_of_experience = years_of_experience
         self.department = department
