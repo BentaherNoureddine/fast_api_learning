@@ -186,6 +186,16 @@ im getting this :
 
 
 
+![Capture d’écran (201)](https://github.com/user-attachments/assets/3dc74d07-46f4-4431-bff8-9a4a84247172)
+
+
+
+but when i check  the database i dont find the created person so let s find out where is the problem
+
+
+
+![Capture d’écran (202)](https://github.com/user-attachments/assets/92b229c4-279d-43af-a349-18a15f9026b2)
+
 
 
 
