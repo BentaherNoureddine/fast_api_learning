@@ -1,4 +1,4 @@
-hello everyone, im learning fastapi , ill try to share everything i learned here.
+![Capture d’écran (202)](https://github.com/user-attachments/assets/771c5bea-9417-47e5-b2f4-31b9c00397eb)hello everyone, im learning fastapi , ill try to share everything i learned here.
 
 HOW I STARTED MY LEARNING JOURNEY : *currently i started following the fastapi official documentation https://fastapi.tiangolo.com/  .
 
@@ -198,12 +198,22 @@ but when i check  the database i dont find the created person so let s find out 
 
 
 
+SORRY GUYS ALL GOOD THE PERSON IS BEING CREATED
+
+
+
+
+this isn the sql querry
+
+![Capture d’écran (203)](https://github.com/user-attachments/assets/7a9fbc66-c731-4984-b3f1-85ce7784557a)
+
+
+and this is the result
 
 
 
 
 
-
-
+![Capture d’écran (204)](https://github.com/user-attachments/assets/4328b67f-0c49-40fd-aeab-409952c7a595)
 
 
