@@ -19,10 +19,10 @@ class Person(Base):
     phoneNumber = Column(String(50))
     disabled = Column(Boolean)
 
-    def __init__(self, firstName, lastName, sex, age, phoneNumber, disabled):
+    def __init__(self, firstName, lastName, sex, age, phoneNumber):
         self.firstName = firstName
         self.lastName = lastName
         self.sex = sex
         self.age = age
         self.phoneNumber = phoneNumber
-        self.disabled = disabled
+        self.disabled = False

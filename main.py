@@ -7,6 +7,7 @@ from model.Director import Director
 from model.Person import Person, Base
 
 from model.ClassRoom import ClassRoom, ClassRoomBase
+from model.Professor import Professor
 
 app = FastAPI()
 
@@ -29,15 +30,17 @@ ClassRoomBase.metadata.create_all(engine)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # created new instance from the person class
-behe = Person("behe", "dehech", "M", 20, "+2165465445", False)
+behe = Person("behe", "dehech", "M", 20, "+2165465445")
 
 # created new instance from the director class
-moudir = Director(5, "wahid", "challouf", "M", "50", "+21655530835", False)
+moudir = Director(5, "wahid", "challouf", "M", "50", "+21655530835")
 
 
-# created an nes instance from the ClassRoom class
-
+# created an  instance from the ClassRoom class
 classRoom1 = ClassRoom("sale1",30)
+
+# created an instance from the Professor class
+prof1 = Professor(1,"IT","si guider", "unknown", "M", 50, "+21655530835")
 
 # created a new session
 session = SessionLocal()
@@ -50,6 +53,9 @@ session.add(moudir)
 
 # added the classRoom1 to the  session
 session.add(classRoom1)
+
+# added the pref1 to the session
+session.add(prof1)
 
 # commited the add
 session.commit()

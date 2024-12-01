@@ -3,6 +3,7 @@ from model.Person import Person
 
 
 class Student(Person):
+    __tablename__ = 'student'
     department = Column(String)
     current_term = Column(String)
 
