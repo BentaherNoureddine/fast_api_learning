@@ -1,4 +1,4 @@
-from sqlalchemy import Integer, Column, String
+from sqlalchemy import Integer, Column, String, ForeignKey
 from model.Person import Person
 
 
@@ -9,7 +9,7 @@ class Student(Person):
 
     #classRooms: List[ClassRoom]  I WILL DEFINE THE RELATIONSHIP LATER
 
-    def __init__(self, department, current_term, firstName, sex, age, lastName, phoneNumber, disabled=False):
-        super().__init__(firstName, sex, age, lastName, phoneNumber, disabled)
+    def __init__(self, department, current_term, firstName, sex, age, lastName, phoneNumber):
+        super().__init__(firstName, sex, age, lastName, phoneNumber)
         self.department = department
         self.current_term = current_term

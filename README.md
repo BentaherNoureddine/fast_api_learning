@@ -160,7 +160,13 @@ but my intention is to share it openly to help others discover valuable learning
 ----------------------------------------------------------------------------------------------------------------
 so until now we learned how we make database tables, let s make the rest of classes as table then let s see what we are going to do next.
 
-1-
+1- after creating one instance from each class
+
+2- we got a problem that say we have to define a relationship (inherit condition) between person and professor , we have to define a foreign key .
+
+3- we successfully fixed the problem by making professor id a foreign key in the person class , so im going to make the director and the student also foreign keys .
+
+4-
 
 
 
