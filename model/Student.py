@@ -4,6 +4,7 @@ from model.Person import Person
 
 class Student(Person):
     __tablename__ = 'student'
+    id = Column(Integer, ForeignKey('person.id'), primary_key=True, autoincrement=True)
     department = Column(String)
     current_term = Column(String)
 
