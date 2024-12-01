@@ -133,7 +133,36 @@ and im really enjoying this journey and that  s what matter ! so let s get start
 
 4- learned about session and added our first class instance to the database
 
+5-"after adding the new ClassRoom instance to the session and restarting the app we got a problem that say Class <class 'model.ClassRoom.ClassRoom'> does not have a __table__ or __tablename__
+so i fixed that by adding  __tablename__ = 'ClassRoom' when defining the class
 
+
+***************************************************************************
+
+DAY 4 :
+
+hello guys, this our 4th day, let s have a productive day!
+
+
+WE HAVE SOME GOOD NEWS : 
+
+**we got some feedback from coding betounsi(1)  and a software at tracekey solutions gmbH(2) :
+
+*(1) : they advised us to keep up like that and learn more about ddl autocommit ,and lean more about the orm .
+
+*(2) : he also advised us to keep up like that and advised us to share our progress in wordPress in order to share our experience later in our cv,
+
+also we have to change the project file structure and the file naming , and we have to improve our english .
+
+***I'm truly grateful for such positive feedback it means a lot to me! Honestly, I'm not entirely sure if sharing this feedback is appropriate,
+but my intention is to share it openly to help others discover valuable learning opportunities.
+
+
+
+----------------------------------------------------------------------------------------------------------------
+so until now we learned how we make database tables, let s make the rest of classes as table then let s see what we are going to do next.
+
+1-
 
 
 
