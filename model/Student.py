@@ -5,8 +5,8 @@ from model.Person import Person
 class Student(Person):
     __tablename__ = 'student'
     id = Column(Integer, ForeignKey('person.id'), primary_key=True, autoincrement=True)
-    department = Column(String)
-    current_term = Column(String)
+    department = Column(String(30))
+    current_term = Column(String(30))
 
     #classRooms: List[ClassRoom]  I WILL DEFINE THE RELATIONSHIP LATER
 
