@@ -1,4 +1,4 @@
-![Capture d’écran (202)](https://github.com/user-attachments/assets/771c5bea-9417-47e5-b2f4-31b9c00397eb)hello everyone, im learning fastapi , ill try to share everything i learned here.
+hello everyone, im learning fastapi , ill try to share everything i learned here.
 
 HOW I STARTED MY LEARNING JOURNEY : *currently i started following the fastapi official documentation https://fastapi.tiangolo.com/  .
 
