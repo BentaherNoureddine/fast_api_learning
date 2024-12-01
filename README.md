@@ -169,7 +169,16 @@ so until now we learned how we make database tables, let s make the rest of clas
 4- so what we're going to  do now is :making CRUD (Create,Read,Update,Delete) api, after finishing this task we will inshallah learn more   
 about the ORM  and the ddl autocommit and improve our code .
 
-5-
+5-when i tried to make the endpoint that create a new person i got a lot of questions :
+  *should i use request body or request params to be honest i don't know when to use the body and when to use the params ill make a search
+  to find out .
+
+  *how to get the data from the request in order to create a new person ... ? 
+
+
+6-
+
+
 
 
 
