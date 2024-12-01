@@ -166,7 +166,10 @@ so until now we learned how we make database tables, let s make the rest of clas
 
 3- we successfully fixed the problem by making professor id a foreign key in the person class , so im going to make the director and the student also foreign keys .
 
-4-
+4- so what we're going to  do now is :making CRUD (Create,Read,Update,Delete) api, after finishing this task we will inshallah learn more   
+about the ORM  and the ddl autocommit and improve our code .
+
+
 
 
 
