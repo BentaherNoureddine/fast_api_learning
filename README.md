@@ -176,7 +176,11 @@ about the ORM  and the ddl autocommit and improve our code .
   *how to get the data from the request in order to create a new person ... ? 
 
 
-6-
+6- i don t know if im forcing the response to be 201 in all cases but 
+
+im getting this :
+
+
 
 
 
