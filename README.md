@@ -203,9 +203,9 @@ SORRY GUYS ALL GOOD THE PERSON IS BEING CREATED
 
 
 
-this isn the sql querry
+this is the sql query :
 
-select * from person where age = 22 ; *
+select * from person where age = 22 ; 
 
 ![Capture d’écran (203)](https://github.com/user-attachments/assets/7a9fbc66-c731-4984-b3f1-85ce7784557a)
 
