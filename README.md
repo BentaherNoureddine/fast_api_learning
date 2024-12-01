@@ -1,4 +1,4 @@
-hello everyone, im learning fastapi , ill try to share everything i learned here.
+![Capture d’écran (202)](https://github.com/user-attachments/assets/771c5bea-9417-47e5-b2f4-31b9c00397eb)hello everyone, im learning fastapi , ill try to share everything i learned here.
 
 HOW I STARTED MY LEARNING JOURNEY : *currently i started following the fastapi official documentation https://fastapi.tiangolo.com/  .
 
@@ -162,7 +162,25 @@ but my intention is to share it openly to help others discover valuable learning
 ----------------------------------------------------------------------------------------------------------------
 so until now we learned how we make database tables, let s make the rest of classes as table then let s see what we are going to do next.
 
-1-
+1- after creating one instance from each class
+
+2- we got a problem that say we have to define a relationship (inherit condition) between person and professor , we have to define a foreign key .
+
+3- we successfully fixed the problem by making professor id a foreign key in the person class , so im going to make the director and the student also foreign keys .
+
+4- so what we're going to  do now is :making CRUD (Create,Read,Update,Delete) api, after finishing this task we will inshallah learn more   
+about the ORM  and the ddl autocommit and improve our code .
+
+5-when i tried to make the endpoint that create a new person i got a lot of questions :
+  *should i use request body or request params to be honest i don't know when to use the body and when to use the params ill make a search
+  to find out .
+
+  *how to get the data from the request in order to create a new person ... ? 
+
+
+6- i don t know if im forcing the response to be 201 in all cases but 
+
+im getting this :
 
 
 
@@ -170,8 +188,36 @@ so until now we learned how we make database tables, let s make the rest of clas
 
 
 
+![Capture d’écran (201)](https://github.com/user-attachments/assets/3dc74d07-46f4-4431-bff8-9a4a84247172)
 
 
 
+but when i check  the database i dont find the created person so let s find out where is the problem
+
+
+
+![Capture d’écran (202)](https://github.com/user-attachments/assets/92b229c4-279d-43af-a349-18a15f9026b2)
+
+
+
+SORRY GUYS ALL GOOD THE PERSON IS BEING CREATED
+
+
+
+
+this is the sql query :
+
+select * from person where age = 22 ; 
+
+![Capture d’écran (203)](https://github.com/user-attachments/assets/7a9fbc66-c731-4984-b3f1-85ce7784557a)
+
+
+and this is the result
+
+
+
+
+
+![Capture d’écran (204)](https://github.com/user-attachments/assets/4328b67f-0c49-40fd-aeab-409952c7a595)
 
 

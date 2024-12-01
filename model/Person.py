@@ -14,7 +14,7 @@ class Person(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     firstName = Column(String(50))
     lastName = Column(String(50))
-    sex = Column(String(50))
+    sex = Column(String(5))
     age = Column(Integer)
     phoneNumber = Column(String(50))
     disabled = Column(Boolean)
