@@ -35,12 +35,11 @@ behe = Person("behe", "dehech", "M", 20, "+2165465445")
 # created new instance from the director class
 moudir = Director(5, "wahid", "challouf", "M", "50", "+21655530835")
 
-
 # created an  instance from the ClassRoom class
-classRoom1 = ClassRoom("sale1",30)
+classRoom1 = ClassRoom("sale1", 30)
 
 # created an instance from the Professor class
-prof1 = Professor(1,"IT","si guider", "unknown", "M", 50, "+21655530835")
+prof1 = Professor(1, "IT", "si guider", "unknown", "M", 50, "+21655530835")
 
 # created a new session
 session = SessionLocal()
@@ -64,9 +63,19 @@ session.commit()
 print(behe.firstName)
 
 
+# ------------------------------------------------------------------------------------------------------------------------
+
+
 # ROOT ENDPOINT
 @app.get("/")
 def read_root():
     return {"HELLO FAST API STUDENTS"}
 
-# GET ALL STUDENTS ENDPOINT
+
+# create a person endpoint
+@app.post("/person/create")
+def createPerson(person: Person):
+    # create an instance of a person with the request attributes
+    person1 = Person(person.firstName, person.lastName, person.sex, person.age, person.phoneNumber)
+
+
