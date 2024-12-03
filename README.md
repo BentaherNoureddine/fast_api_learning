@@ -1,4 +1,4 @@
-![Capture d’écran (202)](https://github.com/user-attachments/assets/771c5bea-9417-47e5-b2f4-31b9c00397eb)hello everyone, im learning fastapi , ill try to share everything i learned here.
+hello everyone, im learning fastapi , ill try to share everything i learned here.
 
 HOW I STARTED MY LEARNING JOURNEY : *currently i started following the fastapi official documentation https://fastapi.tiangolo.com/  .
 
@@ -51,6 +51,8 @@ this class Defines a Pydantic model called Item, which represents the structure 
 
 9- after trying this request this was the response :
 <img src="C:\Users\Nourdine\Pictures\Screenshots\Capture d’écran (198).png"/>
+
+![Capture d’écran (198)](https://github.com/user-attachments/assets/16df77c1-d696-40be-8e64-8923c16fa6ea)
 
 
 
@@ -219,9 +221,10 @@ and this is the result
 ![Capture d’écran (204)](https://github.com/user-attachments/assets/4328b67f-0c49-40fd-aeab-409952c7a595)
 
 
-**********************************************
+**************************************************************************************************************************************************************
+DAY 5 :
 
-HELLO ! this is me again this is our day 5(the half of it technically) in our journey ,no matter what DON'T YOU EVER GIVE UP !
+HELLO ! this is me again this is our DAY 5 (the half of it technically) in our journey ,no matter what DON'T YOU EVER GIVE UP ! 
 
 * so until now we made an endpoint to create a new person , i know it s going to be a repetitive work, but we have to create the endpoints 
 
@@ -237,6 +240,18 @@ I’m not ashamed of it better late than never. What matters is that we identify
 
 *after dropping the db and creating a new one we no longer getting this problem what did i learn :
 SQLAlchemy does not automatically create or modify the database schema during runtime .
+
+*NOTE FORE SPRINGBOOT DEVS : next time when  u talk about hibernate u have to say the POWERFUL HIBERNATE
+
+*NOTE FOR EVERYONE: I’m sure there’s a library that can help with auto-updating the database schema. I just want to describe myself as someone who has just bought a brand new, fully equipped car but doesn't yet know how to use all its features.
+
+*in my next project inshallah i will make a search for the libraries that i need for my project before i start developping my solution .
+
+*by the way i didn't forget about the feedback and the advices we got i will do that inshallah after finishing this little project , and we will also optimize and clean our code as possible as we can .
+
+
+
+
 
 
 
