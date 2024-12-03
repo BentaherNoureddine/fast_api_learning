@@ -239,7 +239,7 @@ I’m not ashamed of it better late than never. What matters is that we identify
 *let s learn more about that !
 
 *after dropping the db and creating a new one we no longer getting this problem what did i learn :
-SQLAlchemy does not automatically create or modify the database schema during runtime .
+SQLAlchemy(our ORM) does not automatically create or modify the database schema during runtime .
 
 *NOTE FORE SPRINGBOOT DEVS : next time when  u talk about hibernate u have to say the POWERFUL HIBERNATE
 
@@ -248,6 +248,8 @@ SQLAlchemy does not automatically create or modify the database schema during ru
 *in my next project inshallah i will make a search for the libraries that i need for my project before i start developping my solution .
 
 *by the way i didn't forget about the feedback and the advices we got i will do that inshallah after finishing this little project , and we will also optimize and clean our code as possible as we can .
+
+*** let s complete our boring CRUD operations in hope we get some problems that we can learn from it .
 
 
 

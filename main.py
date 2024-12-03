@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, status, Query
 from sqlalchemy import create_engine, text, false
 from sqlalchemy.orm import sessionmaker
 
-from dto.createRequest import CreatePersonRequest, CreateStudentRequest
+from dto.createRequest import CreatePersonRequest, CreateStudentRequest, CreateProfessorRequest
 from model.Director import Director
 # IMPORTING PERSON AND BASE FROM PERSON.py
 from model.Person import Person, Base
@@ -85,11 +85,25 @@ def createPerson(request: CreatePersonRequest):
     session.commit()
     return {"Person SUCCESSFULLY CREATED"}
 
+
 # create a student endpoint
 
 @app.post("/student/create", status_code=status.HTTP_201_CREATED)
 def createStudent(request: CreateStudentRequest):
-    session.add(Student(request.department, request.current_term, request.firstName, request.lastName, request.sex, request.age, request.phoneNumber))
+    session.add(
+        Student(request.department, request.current_term, request.firstName, request.lastName, request.sex, request.age,
+                request.phoneNumber))
     session.commit()
     return {"Student SUCCESSFULLY CREATED"}
 
+
+#create professor endpoint
+@app.post("/professor/create", status_code=status.HTTP_201_CREATED)
+def createProfessor(request: CreateProfessorRequest):
+    session.add(
+        Professor(request.years_of_experience, request.department, request.firstName, request.lastName, request.sex,
+                  request.age,
+                  request.phoneNumber))
+
+    session.commit()
+    return {"Professor SUCCESSFULLY CREATED"}
