@@ -2,7 +2,8 @@ from fastapi import FastAPI, HTTPException, status, Query
 from sqlalchemy import create_engine, text, false
 from sqlalchemy.orm import sessionmaker
 
-from dto.createRequest import CreatePersonRequest, CreateStudentRequest, CreateProfessorRequest
+from dto.createRequest import CreatePersonRequest, CreateStudentRequest, CreateProfessorRequest, CreateClassRoomRequest, \
+    CreateDirectorRequest
 from model.Director import Director
 # IMPORTING PERSON AND BASE FROM PERSON.py
 from model.Person import Person, Base
@@ -31,38 +32,8 @@ ClassRoomBase.metadata.create_all(engine)
 # Create a session maker to interact with the database
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# created new instance from the person class
-behe = Person("behe", "dehech", "M", 20, "+2165465445")
-
-# created new instance from the director class
-moudir = Director(5, "wahid", "challouf", "M", "50", "+21655530835")
-
-# created an  instance from the ClassRoom class
-classRoom1 = ClassRoom("sale1", 30)
-
-# created an instance from the Professor class
-prof1 = Professor(1, "IT", "si guider", "unknown", "M", 50, "+21655530835")
-
 # created a new session
 session = SessionLocal()
-
-# added the Person instance to the session
-session.add(behe)
-
-# added the Director Instance to the session
-session.add(moudir)
-
-# added the classRoom1 to the  session
-session.add(classRoom1)
-
-# added the pref1 to the session
-session.add(prof1)
-
-# commited the add
-session.commit()
-
-# some tests
-print(behe.firstName)
 
 
 # ------------------------------------------------------------------------------------------------------------------------
@@ -97,7 +68,7 @@ def createStudent(request: CreateStudentRequest):
     return {"Student SUCCESSFULLY CREATED"}
 
 
-#create professor endpoint
+# create professor endpoint
 @app.post("/professor/create", status_code=status.HTTP_201_CREATED)
 def createProfessor(request: CreateProfessorRequest):
     session.add(
@@ -107,3 +78,26 @@ def createProfessor(request: CreateProfessorRequest):
 
     session.commit()
     return {"Professor SUCCESSFULLY CREATED"}
+
+
+# create director endpoint
+@app.post("/director/create", status_code=status.HTTP_201_CREATED)
+def createDirecor(request: CreateDirectorRequest):
+    session.add(Director(request.years_of_experience,request.firstName,request.lastName,request.sex,request.age,request.phoneNumber))
+    session.commit()
+    return {"Director SUCCESSFULLY CREATED"}
+
+
+
+# create a classroom endpoint
+@app.get("/classroom/create", status_code=status.HTTP_201_CREATED)
+def createClassRoom(request: CreateClassRoomRequest):
+    session.add(ClassRoom(request.name, request.numberOfPlaces))
+    session.commit()
+    return {"ClassRoom SUCCESSFULLY CREATED"}
+
+# todo add relationship between the classes
+
+# todo the app should create the db if it don't exists
+
+# todo the app should update the db schema
