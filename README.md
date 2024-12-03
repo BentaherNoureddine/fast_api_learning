@@ -235,7 +235,10 @@ I’m not ashamed of it better late than never. What matters is that we identify
 
 *let s learn more about that !
 
-*
+*after dropping the db and creating a new one we no longer getting this problem what did i learn :
+SQLAlchemy does not automatically create or modify the database schema during runtime .
+
+
 
 
 
