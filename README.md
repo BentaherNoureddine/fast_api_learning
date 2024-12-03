@@ -219,3 +219,14 @@ and this is the result
 ![Capture d’écran (204)](https://github.com/user-attachments/assets/4328b67f-0c49-40fd-aeab-409952c7a595)
 
 
+**********************************************
+
+HELLO ! this is me again this is our day 5(the half of it technically) in our journey ,no matter what DON'T YOU EVER GIVE UP !
+
+* so until now we made an endpoint to create a new person , i know it s going to be a repetitive work, but we have to create the endpoints 
+
+that create other instances of the other classes (why? to get used with python and fastapi maybe ).
+
+1-
+
+
