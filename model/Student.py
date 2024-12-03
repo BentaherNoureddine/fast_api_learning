@@ -10,7 +10,7 @@ class Student(Person):
 
     #classRooms: List[ClassRoom]  I WILL DEFINE THE RELATIONSHIP LATER
 
-    def __init__(self, department, current_term, firstName, sex, age, lastName, phoneNumber):
-        super().__init__(firstName, sex, age, lastName, phoneNumber)
+    def __init__(self, department, current_term, firstName, lastName, sex, age, phoneNumber):
+        super().__init__(firstName, lastName, sex, age, phoneNumber)
         self.department = department
         self.current_term = current_term

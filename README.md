@@ -221,3 +221,27 @@ and this is the result
 ![Capture d’écran (204)](https://github.com/user-attachments/assets/4328b67f-0c49-40fd-aeab-409952c7a595)
 
 
+**********************************************
+
+HELLO ! this is me again this is our day 5(the half of it technically) in our journey ,no matter what DON'T YOU EVER GIVE UP !
+
+* so until now we made an endpoint to create a new person , i know it s going to be a repetitive work, but we have to create the endpoints 
+
+that create other instances of the other classes (why? to get used with python and fastapi maybe ).
+
+1-*When creating a new student, the student is being saved in the person table because it inherits from Person, 
+and it's also saved in the student table because it is a Student. However,
+I noticed that the superclass attributes are being saved as NULL in the student table.
+Even though I’ve worked on projects like this before and didn’t notice the issue,
+I’m not ashamed of it better late than never. What matters is that we identify and learn from it.
+
+*let s learn more about that !
+
+*after dropping the db and creating a new one we no longer getting this problem what did i learn :
+SQLAlchemy does not automatically create or modify the database schema during runtime .
+
+
+
+
+
+
