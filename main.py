@@ -225,16 +225,154 @@ def updateClassRoom(request: UpdateClassRoomRequest, id: int):
     return classroom1data
 
 
-'''
+# delete person endpoint
 
-    session.add(person1)
+@app.delete("/person/delete/{id}", status_code=status.HTTP_202_ACCEPTED)
+def deletePerson(id: int):
+    person1db = session.get(Person, id)
+    if not person1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Person not found")
+    session.delete(person1db)
     session.commit()
+    return "Person SUCCESSFULLY DELETED"
 
-    # the refresh is responsible for refreshing the memory with the latest data from the database
-    session.refresh(person1)
-    return {person1}
-    
-'''
+
+# delete student endpoint
+
+@app.delete("/student/delete/{id}", status_code=status.HTTP_202_ACCEPTED)
+def deletePerson(id: int):
+    student1db = session.get(Student, id)
+    if not student1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Student not found")
+    session.delete(student1db)
+    session.commit()
+    return "Student SUCCESSFULLY DELETED"
+
+
+# delete professor endpoint
+
+@app.delete("/professor/delete/{id}", status_code=status.HTTP_202_ACCEPTED)
+def deleteProfessor(id: int):
+    professor1db = session.get(Professor, id)
+    if not professor1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Professor not found")
+    session.delete(professor1db)
+    session.commit()
+    return "Professor SUCCESSFULLY DELETED"
+
+
+# delete director endpoint
+
+@app.delete("/director/delete/{id}", status_code=status.HTTP_202_ACCEPTED)
+def deleteDirector(id: int):
+    director1db = session.get(Director, id)
+    if not director1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Director not found")
+    session.delete(director1db)
+    session.commit()
+    return "Director SUCCESSFULLY DELETED"
+
+
+# delete classRoom endpoint
+
+@app.delete("/classroom/delete/{id}", status_code=status.HTTP_202_ACCEPTED)
+def deleteClassRoom(id: int):
+    director1db = session.get(ClassRoom, id)
+    if not director1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Director not found")
+    session.delete(director1db)
+    session.commit()
+    return "Director SUCCESSFULLY DELETED"
+
+
+# fetch all persons
+@app.get("/person/getAll", status_code=status.HTTP_200_OK)
+def getAllPerson():
+    person = session.query(Person).all()
+    return person
+
+
+# fetch all students
+@app.get("/student/getAll", status_code=status.HTTP_200_OK)
+def getAllStudent():
+    student = session.query(Student).all()
+    return student
+
+
+# fetch all professors
+@app.get("/professor/getAll", status_code=status.HTTP_200_OK)
+def getAllPerson():
+    person = session.query(Person).all()
+    return person
+
+
+# fetch all directors
+@app.get("/directors/getAll", status_code=status.HTTP_200_OK)
+def getAllDirector():
+    director = session.query(Director).all()
+    return director
+
+
+# fetch all classRooms
+@app.get("/classroom/getAll", status_code=status.HTTP_200_OK)
+def getAllClassRoom():
+    classroom = session.query(ClassRoom).all()
+    return classroom
+
+
+# get person by id
+@app.get("/person/get/{id}", status_code=status.HTTP_200_OK)
+def getPersonById(id: int):
+    person = session.get(Person, id)
+
+    if not person:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Person not found")
+
+    return person
+
+
+# get classroom by id
+@app.get("/classroom/get/{id}", status_code=status.HTTP_200_OK)
+def getClassRoomById(id: int):
+    person = session.get(Person, id)
+
+    if not person:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Person not found")
+
+    return person
+
+
+# get director by id
+@app.get("/director/get/{id}", status_code=status.HTTP_200_OK)
+def getDirectorById(id: int):
+    director = session.get(Director, id)
+
+    if not director:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Director not found")
+
+    return director
+
+
+# get professor by id
+@app.get("/professor/get/{id}", status_code=status.HTTP_200_OK)
+def getProfessorById(id: int):
+    professor = session.get(Professor, id)
+
+    if not professor:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Professor not found")
+
+    return professor
+
+
+# get student by id
+@app.get("/student/get/{id}", status_code=status.HTTP_200_OK)
+def getPersonById(id: int):
+    student = session.get(Student, id)
+
+    if not student:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Student not found")
+
+    return student
 
 # todo add relationship between the classes
 
