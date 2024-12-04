@@ -100,17 +100,28 @@ def createClassRoom(request: CreateClassRoomRequest):
 
 @app.put("/person/update/{id}", status_code=status.HTTP_200_OK)
 def updatePerson(request: UpdatePersonRequest, id: int):
-    person1 = session.get(Person, id)
+    person1db = session.get(Person, id)
 
-    print(person1.firstName, person1.lastName)
-
-    if not person1:
+    if not person1db:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
 
-    # test
-    for i in range(10):
-        print(request.age)
+    # exclude_unset=True means that we exclude any values that would be there just for being the default values
+    person1data = request.model_dump(exclude_unset=True)
 
+    person1db.sqlmodel_update = person1data
+
+    session.add(person1db)
+    session.commit()
+    session.refresh(person1db)
+
+
+    return {person1db}
+
+
+
+
+
+'''
     # we're only going to update this person with the filled attributes
     if request.firstName is not None:
         person1.firstName = request.firstName
@@ -121,13 +132,14 @@ def updatePerson(request: UpdatePersonRequest, id: int):
     if request.age is not None:
         person1.age = request.age
 
+
     session.add(person1)
     session.commit()
 
     # the refresh is responsible for refreshing the memory with the latest data from the database
     session.refresh(person1)
     return {person1}
-
+'''
 # todo add relationship between the classes
 
 # todo the app should create the db if it don't exists

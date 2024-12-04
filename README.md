@@ -274,7 +274,33 @@ DAY 6 :
 let s find an answer for that last question!
 
 
+* - we successfully fetched(by using session.get()) the user and made our first update endpoint but we have to improve the way of updating the 
+person
 
+* i replaced updating the person manually by using this code
+"
+@app.put("/person/update/{id}", status_code=status.HTTP_200_OK)
+def updatePerson(request: UpdatePersonRequest, id: int):
+    person1db = session.get(Person, id)
+
+    if not person1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
+    # exclude_unset=True means that we exclude any values that would be there just for being the default values
+    person1data = request.model_dump(exclude_unset=True)
+
+    person1db.sqlmodel_update = person1data
+
+    session.add(person1db)
+    session.commit()
+    session.refresh(person1db)
+
+
+    return {person1db}
+
+"
+
+when i try to update the person im getting this : 
 
 
 
