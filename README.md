@@ -250,7 +250,6 @@ SQLAlchemy does not automatically create or modify the database schema during ru
 *by the way i didn't forget about the feedback and the advices we got i will do that inshallah after finishing this little project , and we will also optimize and clean our code as possible as we can .
 
 
-![Capture d’écran (207)](https://github.com/user-attachments/assets/8300c885-4e67-4193-ae81-78bd0c705b6c)
 
 
 
