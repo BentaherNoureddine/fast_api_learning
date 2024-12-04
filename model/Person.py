@@ -1,6 +1,7 @@
 from sqlalchemy import Integer, String, Column, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 
+
 # creating a declarative base
 # The declarative base lets us use that class in defining ORM models.
 # We inherit from this base class to define our SQLAlchemy models.

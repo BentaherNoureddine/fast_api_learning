@@ -311,6 +311,18 @@ when i try to update the person im getting this :
 
 
 
+**** i was following the documentation on how updating and i found that they are using sqlmodel_update for updating i tried to do that
+
+but i got a problem because the class created in the documentation extends the SQLModel and im extending the declarative base which does not
+
+have the sqlmodel_update so i used setattr() method to update the person (u can find the implementation in this commit at the line 115).
+
+
+********* to
+
+
+
+
 
 
 
