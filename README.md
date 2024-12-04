@@ -325,6 +325,12 @@ the rest of the models.
 
 3- this is so boring, but we have to make the delete and the fetch endpoints 
 
+4-we finally completed the CRUD
+
+5- let s fix the relationship between the models you can find all the changes in the next commits
+
+
+
 
 
 
