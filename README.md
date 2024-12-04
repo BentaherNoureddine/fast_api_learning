@@ -307,6 +307,7 @@ when i try to update the person im getting this :
 
 
 
+![Capture d’écran (207)](https://github.com/user-attachments/assets/3d7fd797-29dc-4b7e-a942-41ebef8b3d0d)
 
 
 
