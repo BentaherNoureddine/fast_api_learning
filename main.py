@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 from dto.createRequest import CreatePersonRequest, CreateStudentRequest, CreateProfessorRequest, CreateClassRoomRequest, \
     CreateDirectorRequest
+from dto.updateRequest import UpdatePersonRequest
 from model.Director import Director
 # IMPORTING PERSON AND BASE FROM PERSON.py
 from model.Person import Person, Base
@@ -83,10 +84,10 @@ def createProfessor(request: CreateProfessorRequest):
 # create director endpoint
 @app.post("/director/create", status_code=status.HTTP_201_CREATED)
 def createDirecor(request: CreateDirectorRequest):
-    session.add(Director(request.years_of_experience,request.firstName,request.lastName,request.sex,request.age,request.phoneNumber))
+    session.add(Director(request.years_of_experience, request.firstName, request.lastName, request.sex, request.age,
+                         request.phoneNumber))
     session.commit()
     return {"Director SUCCESSFULLY CREATED"}
-
 
 
 # create a classroom endpoint
@@ -95,6 +96,37 @@ def createClassRoom(request: CreateClassRoomRequest):
     session.add(ClassRoom(request.name, request.numberOfPlaces))
     session.commit()
     return {"ClassRoom SUCCESSFULLY CREATED"}
+
+
+@app.put("/person/update/{id}", status_code=status.HTTP_200_OK)
+def updatePerson(request: UpdatePersonRequest, id: int):
+    person1 = session.get(Person, id)
+
+    print(person1.firstName, person1.lastName)
+
+    if not person1:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
+    # test
+    for i in range(10):
+        print(request.age)
+
+    # we're only going to update this person with the filled attributes
+    if request.firstName is not None:
+        person1.firstName = request.firstName
+    if request.lastName is not None:
+        person1.lastName = request.lastName
+    if request.sex is not None:
+        person1.sex = request.sex
+    if request.age is not None:
+        person1.age = request.age
+
+    session.add(person1)
+    session.commit()
+
+    # the refresh is responsible for refreshing the memory with the latest data from the database
+    session.refresh(person1)
+    return {person1}
 
 # todo add relationship between the classes
 

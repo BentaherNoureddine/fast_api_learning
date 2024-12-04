@@ -76,7 +76,7 @@ and i had to tell spring boot that such a class is a sql table by only using @En
 
 what im sure about , and we all know is rich with libraries that helps reduce code, reduce tasks ,gain more time and makes things so easy ,
 
-SO WHAT IM GONNA DO NOW  : ill make a little search in order to find some libraries to help us making sql tables without typing so much as 
+SO WHAT IM GOING TO DO NOW  : ill make a little search in order to find some libraries to help us making sql tables without typing so much as 
 this screenshot shows :
 
 
@@ -159,7 +159,7 @@ but my intention is to share it openly to help others discover valuable learning
 
 
 
-----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
 so until now we learned how we make database tables, let s make the rest of classes as table then let s see what we are going to do next.
 
 1- after creating one instance from each class
@@ -178,7 +178,7 @@ about the ORM  and the ddl autocommit and improve our code .
   *how to get the data from the request in order to create a new person ... ? 
 
 
-6- i don t know if im forcing the response to be 201 in all cases but 
+6- i don't know if im forcing the response to be 201 in all cases but 
 
 im getting this :
 
@@ -250,6 +250,34 @@ SQLAlchemy(our ORM) does not automatically create or modify the database schema 
 *by the way i didn't forget about the feedback and the advices we got i will do that inshallah after finishing this little project , and we will also optimize and clean our code as possible as we can .
 
 *** let s complete our boring CRUD operations in hope we get some problems that we can learn from it .
+
+
+
+2-we made all the endpoints that's responsible for creating an instance of al the classes . 
+
+*My next task is to develop the endpoint that updates a person. After that, 
+I will use ChatGPT to create the update endpoints for the other classes to save some time.
+
+3- when tried to make the update endpoint , the first question i had in my mind :
+
+how to fetch that person from the db ? :
+
+**********************************************************************************************************************
+
+
+hello everyone, I hope you are all good !
+
+this is our :
+
+DAY 6 :
+
+let s find an answer for that last question!
+
+
+
+
+
+
 
 
 
