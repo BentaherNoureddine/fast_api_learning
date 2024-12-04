@@ -274,7 +274,7 @@ DAY 6 :
 let s find an answer for that last question!
 
 
-* - we successfully fetched(by using session.get()) the user and made our first update endpoint but we have to improve the way of updating the 
+1- * - we successfully fetched(by using session.get()) the user and made our first update endpoint but we have to improve the way of updating the 
 person
 
 * i replaced updating the person manually by using this code
@@ -318,7 +318,17 @@ but i got a problem because the class created in the documentation extends the S
 have the sqlmodel_update so i used setattr() method to update the person (u can find the implementation in this commit at the line 115).
 
 
-********* to
+********* at this stage, we successfully made a update endpoint what im going to do now is using chatgpt to generate update endpoints for   
+the rest of the models.
+
+2- ChatGPT generated the update endpoints!
+
+3- this is so boring, but we have to make the delete and the fetch endpoints 
+
+
+
+
+
 
 
 

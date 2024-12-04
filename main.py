@@ -4,7 +4,8 @@ from sqlalchemy.orm import sessionmaker
 
 from dto.createRequest import CreatePersonRequest, CreateStudentRequest, CreateProfessorRequest, CreateClassRoomRequest, \
     CreateDirectorRequest
-from dto.updateRequest import UpdatePersonRequest
+from dto.updateRequest import UpdatePersonRequest, UpdateStudentRequest, UpdateProfessorRequest, UpdateDirectorRequest, \
+    UpdateClassRoomRequest
 from model.Director import Director
 # IMPORTING PERSON AND BASE FROM PERSON.py
 from model.Person import Person, Base
@@ -83,7 +84,7 @@ def createProfessor(request: CreateProfessorRequest):
 
 # create director endpoint
 @app.post("/director/create", status_code=status.HTTP_201_CREATED)
-def createDirecor(request: CreateDirectorRequest):
+def createDirector(request: CreateDirectorRequest):
     session.add(Director(request.years_of_experience, request.firstName, request.lastName, request.sex, request.age,
                          request.phoneNumber))
     session.commit()
@@ -91,7 +92,7 @@ def createDirecor(request: CreateDirectorRequest):
 
 
 # create a classroom endpoint
-@app.get("/classroom/create", status_code=status.HTTP_201_CREATED)
+@app.post("/classroom/create", status_code=status.HTTP_201_CREATED)
 def createClassRoom(request: CreateClassRoomRequest):
     session.add(ClassRoom(request.name, request.numberOfPlaces))
     session.commit()
@@ -123,6 +124,107 @@ def updatePerson(request: UpdatePersonRequest, id: int):
     return person1data
 
 
+# update student endpoint
+@app.put("/student/update/{id}", status_code=status.HTTP_200_OK)
+def updateStudent(request: UpdateStudentRequest, id: int):
+    # Fetch student from the database
+    student1db = session.get(Student, id)
+
+    # If the student doesn't exist, return 404 not found
+    if not student1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
+    # Exclude unset values from the request
+    student1data = request.dict(exclude_unset=True)
+
+    # Update the student's fields dynamically
+    for key, value in student1data.items():
+        setattr(student1db, key, value)
+
+    # Save changes to the database
+    session.add(student1db)
+    session.commit()
+    session.refresh(student1db)
+
+    return student1data
+
+
+# update professor endpoint
+@app.put("/professor/update/{id}", status_code=status.HTTP_200_OK)
+def updateProfessor(request: UpdateProfessorRequest, id: int):
+    # Fetch professor from the database
+    professor1db = session.get(Professor, id)
+
+    # If the professor doesn't exist, return 404 not found
+    if not professor1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
+    # Exclude unset values from the request
+    professor1data = request.dict(exclude_unset=True)
+
+    # Update the professor's fields dynamically
+    for key, value in professor1data.items():
+        setattr(professor1db, key, value)
+
+    # Save changes to the database
+    session.add(professor1db)
+    session.commit()
+    session.refresh(professor1db)
+
+    return professor1data
+
+
+# update director endpoint
+@app.put("/director/update/{id}", status_code=status.HTTP_200_OK)
+def updateDirector(request: UpdateDirectorRequest, id: int):
+    # Fetch director from the database
+    director1db = session.get(Director, id)
+
+    # If the director doesn't exist, return 404 not found
+    if not director1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
+    # Exclude unset values from the request
+    director1data = request.dict(exclude_unset=True)
+
+    # Update the director's fields dynamically
+    for key, value in director1data.items():
+        setattr(director1db, key, value)
+
+    # Save changes to the database
+    session.add(director1db)
+    session.commit()
+    session.refresh(director1db)
+
+    return director1data
+
+
+# update class room endpoint
+
+@app.put("/classroom/update/{id}", status_code=status.HTTP_200_OK)
+def updateClassRoom(request: UpdateClassRoomRequest, id: int):
+    # Fetch classroom from the database
+    classroom1db = session.get(ClassRoom, id)
+
+    # If the classroom doesn't exist, return 404 not found
+    if not classroom1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
+    # Exclude unset values from the request
+    classroom1data = request.dict(exclude_unset=True)
+
+    # Update the classroom's fields dynamically
+    for key, value in classroom1data.items():
+        setattr(classroom1db, key, value)
+
+    # Save changes to the database
+    session.add(classroom1db)
+    session.commit()
+    session.refresh(classroom1db)
+
+    return classroom1data
+
+
 '''
 
     session.add(person1)
@@ -139,5 +241,3 @@ def updatePerson(request: UpdatePersonRequest, id: int):
 # todo the app should create the db if it don't exists
 
 # todo the app should update the db schema
-
-
