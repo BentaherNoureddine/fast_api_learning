@@ -76,7 +76,7 @@ and i had to tell spring boot that such a class is a sql table by only using @En
 
 what im sure about , and we all know is rich with libraries that helps reduce code, reduce tasks ,gain more time and makes things so easy ,
 
-SO WHAT IM GONNA DO NOW  : ill make a little search in order to find some libraries to help us making sql tables without typing so much as 
+SO WHAT IM GOING TO DO NOW  : ill make a little search in order to find some libraries to help us making sql tables without typing so much as 
 this screenshot shows :
 
 
@@ -159,7 +159,7 @@ but my intention is to share it openly to help others discover valuable learning
 
 
 
-----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
 so until now we learned how we make database tables, let s make the rest of classes as table then let s see what we are going to do next.
 
 1- after creating one instance from each class
@@ -178,7 +178,7 @@ about the ORM  and the ddl autocommit and improve our code .
   *how to get the data from the request in order to create a new person ... ? 
 
 
-6- i don t know if im forcing the response to be 201 in all cases but 
+6- i don't know if im forcing the response to be 201 in all cases but 
 
 im getting this :
 
@@ -239,7 +239,7 @@ I’m not ashamed of it better late than never. What matters is that we identify
 *let s learn more about that !
 
 *after dropping the db and creating a new one we no longer getting this problem what did i learn :
-SQLAlchemy does not automatically create or modify the database schema during runtime .
+SQLAlchemy(our ORM) does not automatically create or modify the database schema during runtime .
 
 *NOTE FORE SPRINGBOOT DEVS : next time when  u talk about hibernate u have to say the POWERFUL HIBERNATE
 
@@ -248,6 +248,93 @@ SQLAlchemy does not automatically create or modify the database schema during ru
 *in my next project inshallah i will make a search for the libraries that i need for my project before i start developping my solution .
 
 *by the way i didn't forget about the feedback and the advices we got i will do that inshallah after finishing this little project , and we will also optimize and clean our code as possible as we can .
+
+*** let s complete our boring CRUD operations in hope we get some problems that we can learn from it .
+
+
+
+2-we made all the endpoints that's responsible for creating an instance of al the classes . 
+
+*My next task is to develop the endpoint that updates a person. After that, 
+I will use ChatGPT to create the update endpoints for the other classes to save some time.
+
+3- when tried to make the update endpoint , the first question i had in my mind :
+
+how to fetch that person from the db ? :
+
+**********************************************************************************************************************
+
+
+hello everyone, I hope you are all good !
+
+this is our :
+
+DAY 6 :
+
+let s find an answer for that last question!
+
+
+1- * - we successfully fetched(by using session.get()) the user and made our first update endpoint but we have to improve the way of updating the 
+person
+
+* i replaced updating the person manually by using this code
+"
+@app.put("/person/update/{id}", status_code=status.HTTP_200_OK)
+def updatePerson(request: UpdatePersonRequest, id: int):
+    person1db = session.get(Person, id)
+
+    if not person1db:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+
+    # exclude_unset=True means that we exclude any values that would be there just for being the default values
+    person1data = request.model_dump(exclude_unset=True)
+
+    person1db.sqlmodel_update = person1data
+
+    session.add(person1db)
+    session.commit()
+    session.refresh(person1db)
+
+
+    return {person1db}
+
+"
+
+when i try to update the person im getting this : 
+
+
+
+
+
+
+![Capture d’écran (207)](https://github.com/user-attachments/assets/3d7fd797-29dc-4b7e-a942-41ebef8b3d0d)
+
+
+
+**** i was following the documentation on how updating and i found that they are using sqlmodel_update for updating i tried to do that
+
+but i got a problem because the class created in the documentation extends the SQLModel and im extending the declarative base which does not
+
+have the sqlmodel_update so i used setattr() method to update the person (u can find the implementation in this commit at the line 115).
+
+
+********* at this stage, we successfully made a update endpoint what im going to do now is using chatgpt to generate update endpoints for   
+the rest of the models.
+
+2- ChatGPT generated the update endpoints!
+
+3- this is so boring, but we have to make the delete and the fetch endpoints 
+
+4-we finally completed the CRUD
+
+5- let s fix the relationship between the models you can find all the changes in the next commits
+
+
+
+
+
+
+
 
 
 
