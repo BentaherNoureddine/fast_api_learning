@@ -37,6 +37,7 @@ class CreateProfessorRequest(BaseModel):
     phoneNumber: str | None = None
     department: str
     years_of_experience: int
+    director_id: int | None = None
 
 
 # create a Director request
@@ -48,6 +49,7 @@ class CreateDirectorRequest(BaseModel):
     age: int
     phoneNumber: str | None = None
     years_of_experience: int
+    professors: list[int]
 
 
 # create a classRoom request

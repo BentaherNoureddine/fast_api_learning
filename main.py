@@ -76,7 +76,7 @@ def createProfessor(request: CreateProfessorRequest):
     session.add(
         Professor(request.years_of_experience, request.department, request.firstName, request.lastName, request.sex,
                   request.age,
-                  request.phoneNumber))
+                  request.phoneNumber, request.director_id))
 
     session.commit()
     return {"Professor SUCCESSFULLY CREATED"}
@@ -86,7 +86,7 @@ def createProfessor(request: CreateProfessorRequest):
 @app.post("/director/create", status_code=status.HTTP_201_CREATED)
 def createDirector(request: CreateDirectorRequest):
     session.add(Director(request.years_of_experience, request.firstName, request.lastName, request.sex, request.age,
-                         request.phoneNumber))
+                         request.phoneNumber,request.professors))
     session.commit()
     return {"Director SUCCESSFULLY CREATED"}
 
@@ -301,16 +301,21 @@ def getAllStudent():
 
 # fetch all professors
 @app.get("/professor/getAll", status_code=status.HTTP_200_OK)
-def getAllPerson():
-    person = session.query(Person).all()
-    return person
+def getAllProfessors():
+    professors = session.query(Professor).all()
+    for i in range(len(professors)):
+        print(professors[i].director_id)
+    return professors
 
 
 # fetch all directors
-@app.get("/directors/getAll", status_code=status.HTTP_200_OK)
+@app.get("/director/getAll", status_code=status.HTTP_200_OK)
 def getAllDirector():
-    director = session.query(Director).all()
-    return director
+    directors = session.query(Director).all()
+    for i in range(len(directors)):
+        print(directors[i].professors)
+
+    return directors
 
 
 # fetch all classRooms
