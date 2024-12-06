@@ -1,6 +1,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Integer, Column, String
 
+
 # Define the base class for ORM models
 ClassRoomBase = declarative_base()
 
@@ -16,4 +17,3 @@ class ClassRoom(ClassRoomBase):
         self.name = name
         self.numberOfPlaces = numberOfPlaces
 
-    # students: List[Student]  # I will define the relationship later
